@@ -750,6 +750,117 @@
       color: var(--text-secondary);
     }
 
+    /* ========== CHAT BUBBLES ========== */
+    .chat-section {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+
+    .chat-topic {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--gold);
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255,215,0,0.15);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .chat-bubble {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+
+    .chat-bubble.right {
+      flex-direction: row-reverse;
+    }
+
+    .bubble-icon {
+      font-size: 26px;
+      flex-shrink: 0;
+    }
+
+    .bubble-text {
+      border-radius: 0 14px 14px 14px;
+      padding: 14px 16px;
+      flex: 1;
+      max-width: 85%;
+    }
+
+    .chat-bubble.right .bubble-text {
+      border-radius: 14px 0 14px 14px;
+    }
+
+    .bubble-label {
+      font-size: 11px;
+      font-weight: 800;
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    .chat-bubble.right .bubble-label {
+      text-align: right;
+    }
+
+    .bubble-body {
+      font-size: 13px;
+      color: #c0c0d8;
+      line-height: 1.75;
+    }
+
+    .debate-verdict {
+      background: linear-gradient(135deg, rgba(191,10,48,0.08), rgba(255,215,0,0.08), rgba(207,20,43,0.08));
+      border: 1px solid rgba(255,215,0,0.25);
+      border-radius: 16px;
+      padding: 24px;
+      margin-top: 8px;
+    }
+
+    .verdict-scores {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .vscore-card {
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .vscore-icon { font-size: 22px; margin-bottom: 6px; }
+    .vscore-role { font-size: 11px; font-weight: 700; margin-bottom: 8px; }
+    .vscore-num {
+      font-size: 26px;
+      font-weight: 900;
+      color: white;
+      margin-bottom: 4px;
+    }
+    .vscore-winner { font-size: 11px; color: var(--text-secondary); }
+    .vscore-pct {
+      margin-top: 10px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 8px;
+      padding: 8px 6px;
+    }
+    .vscore-pct-main { font-size: 13px; font-weight: 800; }
+    .vscore-pct-sub { font-size: 11px; color: var(--text-secondary); margin-top: 2px; }
+
+    @media (max-width: 600px) {
+      .verdict-scores { grid-template-columns: 1fr; }
+      .chat-bubble.right { flex-direction: row; }
+      .chat-bubble.right .bubble-text { border-radius: 0 14px 14px 14px; }
+      .chat-bubble.right .bubble-label { text-align: left; }
+    }
+
     /* ========== FOOTER ========== */
     footer {
       text-align: center;
@@ -1345,6 +1456,197 @@
         <div class="check-item"><div class="check-box"></div>ジャッジのHRを見届ける</div>
         <div class="check-item"><div class="check-box"></div>優勝セレモニーを最後まで鑑賞</div>
       </div>
+    </section>
+
+  </div><!-- /container -->
+
+    <!-- ========== コメンテーター円卓討論 ========== -->
+    <section class="section">
+      <div class="section-title">
+        <span class="icon">🎙️</span>コメンテーター円卓討論 — 決勝を語る
+      </div>
+
+      <!-- アナリスト紹介 -->
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:24px; text-align:center;">
+        <div style="background:rgba(191,10,48,0.1); border:1px solid rgba(191,10,48,0.3); border-radius:12px; padding:16px;">
+          <div style="font-size:32px; margin-bottom:8px;">🦅</div>
+          <div style="font-weight:800; font-size:14px; color:#ff8888;">アメリカ担当</div>
+          <div style="font-size:11px; color:var(--text-secondary); margin-top:4px;">MLB現地特派員・元マイナーリーガー</div>
+        </div>
+        <div style="background:rgba(244,205,0,0.06); border:1px solid rgba(244,205,0,0.2); border-radius:12px; padding:16px;">
+          <div style="font-size:32px; margin-bottom:8px;">⚖️</div>
+          <div style="font-weight:800; font-size:14px; color:var(--gold);">中立アナリスト</div>
+          <div style="font-size:11px; color:var(--text-secondary); margin-top:4px;">国際野球専門家・WBC全大会取材</div>
+        </div>
+        <div style="background:rgba(207,20,43,0.1); border:1px solid rgba(244,205,0,0.3); border-radius:12px; padding:16px;">
+          <div style="font-size:32px; margin-bottom:8px;">🦁</div>
+          <div style="font-weight:800; font-size:14px; color:#ffcc44;">ベネズエラ担当</div>
+          <div style="font-size:11px; color:var(--text-secondary); margin-top:4px;">ラテンベースボール評論家・ベネズエラ通</div>
+        </div>
+      </div>
+
+      <!-- 議題1 -->
+      <div class="chat-section">
+        <div class="chat-topic">💬 議題1：決勝という舞台で、両チームの最大の武器は何か？</div>
+
+        <div class="chat-bubble">
+          <div class="bubble-icon">🦅</div>
+          <div class="bubble-text" style="background:rgba(191,10,48,0.1);">
+            <div class="bubble-label" style="color:#ff8888;">🦅 アメリカ担当</div>
+            <div class="bubble-body">アメリカの最大の武器は<strong style="color:white;">「ブルペンの規格外の深さ」</strong>です。マクリーンが先発60球をこなした後に控えるのが、ポール・スキーンズ（100mph超）、メイソン・ミラー（TBD）、デイビッド・ベドナー……という投手陣。どのイニングで出てきても「試合を終わらせられる」クローザー級が3人いる。ベネズエラ打線がどれだけ強力でも、<strong style="color:white;">終盤の剛速球リレーを攻略するのは至難の業</strong>です。</div>
+          </div>
+        </div>
+
+        <div class="chat-bubble right">
+          <div class="bubble-icon">🦁</div>
+          <div class="bubble-text" style="background:rgba(244,205,0,0.08);">
+            <div class="bubble-label" style="color:#ffcc44;">🦁 ベネズエラ担当</div>
+            <div class="bubble-body">ベネズエラの武器は<strong style="color:white;">「逆境で輝く打線のメンタリティ」</strong>ですよ。今大会、追いかける展開から日本を8-5でひっくり返し、イタリアも7回に逆転。<strong style="color:white;">「負けている方が燃える」チーム</strong>なんです。それに加えてマイケル・ガルシアという化け物がいる。打率.435、OPS 1.110……決勝だからといって突然打てなくなるわけがない。この男が今大会最高の選手です。</div>
+          </div>
+        </div>
+
+        <div class="chat-bubble">
+          <div class="bubble-icon">⚖️</div>
+          <div class="bubble-text" style="background:rgba(255,215,0,0.05);">
+            <div class="bubble-label" style="color:var(--gold);">⚖️ 中立アナリスト</div>
+            <div class="bubble-body">客観的に整理すると、<strong style="color:white;">アメリカは「個の規格外スペック」</strong>で勝る。ジャッジ、アンソニー、ヘンダーソン、スキーンズ——一人一人がスター中のスター。一方、<strong style="color:white;">ベネズエラは「チームとしての流れと一体感」</strong>。どちらが決勝のプレッシャーを味方にできるか。面白いのは、アメリカが「超実力勝負」を志向し、ベネズエラが「流れとドラマ」を武器にするという<strong style="color:white;">野球観の対立</strong>でもある点です。</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 議題2 -->
+      <div class="chat-section">
+        <div class="chat-topic">💬 議題2：試合の分岐点になりそうな「最重要の1イニング」はどこか？</div>
+
+        <div class="chat-bubble">
+          <div class="bubble-icon">🦅</div>
+          <div class="bubble-text" style="background:rgba(191,10,48,0.1);">
+            <div class="bubble-label" style="color:#ff8888;">🦅 アメリカ担当</div>
+            <div class="bubble-body"><strong style="color:white;">1回表、アメリカの攻撃</strong>が全ての始まりです。エドゥアルド・ロドリゲスは昨季ERA 5.02のベテラン左腕。「大事な試合は緊張で硬くなる」タイプかどうかが試されます。アーロン・ジャッジが1回に先頭打者HRを叩き込めば——球場の雰囲気は一変します。ベネズエラサポーターで埋まるマイアミのスタンドを一瞬で静寂に包めるかどうか。<strong style="color:white;">先制した方が圧倒的に有利</strong>な展開になる試合だと思います。</div>
+          </div>
+        </div>
+
+        <div class="chat-bubble right">
+          <div class="bubble-icon">🦁</div>
+          <div class="bubble-text" style="background:rgba(244,205,0,0.08);">
+            <div class="bubble-label" style="color:#ffcc44;">🦁 ベネズエラ担当</div>
+            <div class="bubble-body">私は<strong style="color:white;">7回裏、ベネズエラの攻撃</strong>に注目しています。今大会のベネズエラは「7回に何かが起きる」チームですよ——日本戦もイタリア戦も7回逆転。偶然ではなく、終盤の集中力と我慢強さが戦術として身についている。マクリーンの後を受けたリリーフが登板してまだ慣れていない瞬間、アクーニャかチョーリオが出塁すれば…… <strong style="color:white;">「またか！」という展開</strong>を予感させてくれます。</div>
+          </div>
+        </div>
+
+        <div class="chat-bubble">
+          <div class="bubble-icon">⚖️</div>
+          <div class="bubble-text" style="background:rgba(255,215,0,0.05);">
+            <div class="bubble-label" style="color:var(--gold);">⚖️ 中立アナリスト</div>
+            <div class="bubble-body">両者の意見を踏まえると、<strong style="color:white;">最も重要なのは「マクリーンが降板する瞬間」</strong>——おそらく3〜4回——ここで発生する「継投の隙間」です。先発が降板した直後の最初の打者は、WBCで歴史的に被打率が高い。アメリカはリリーフ陣が圧倒的でも、<strong style="color:white;">「誰をいつ出すか」の継投ミスが命取り</strong>になりかねない。逆にロドリゲスが2回にKOされるシナリオも十分ある。早い回の得点が勝敗を左右する確率が高いです。</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 議題3 -->
+      <div class="chat-section">
+        <div class="chat-topic">💬 議題3：ベネズエラが歴史的初優勝を飾るシナリオはあるか？</div>
+
+        <div class="chat-bubble">
+          <div class="bubble-icon">🦅</div>
+          <div class="bubble-text" style="background:rgba(191,10,48,0.1);">
+            <div class="bubble-label" style="color:#ff8888;">🦅 アメリカ担当</div>
+            <div class="bubble-body">正直に言います——<strong style="color:white;">ゼロではない</strong>。でも条件が揃わないと難しい。ロドリゲスが5回2失点以内に凌ぐ、マクリーンから2〜3回で複数点を奪う、ガルシアとアクーニャが共に複数安打、そしてアメリカの剛速球を当てられる選手が4〜5人出てくる——<strong style="color:white;">この全部が重ならないと逆転は難しい</strong>。アメリカのブルペンはそれほどまでに安定している。ただ……<strong style="color:white;">「ベネズエラに流れが来たとき」</strong>だけは、正直読めません。</div>
+          </div>
+        </div>
+
+        <div class="chat-bubble right">
+          <div class="bubble-icon">🦁</div>
+          <div class="bubble-text" style="background:rgba(244,205,0,0.08);">
+            <div class="bubble-label" style="color:#ffcc44;">🦁 ベネズエラ担当</div>
+            <div class="bubble-body">「番狂わせ」なんかじゃないですよ！ベネズエラは今大会<strong style="color:white;">5勝1敗</strong>。あの日本を倒した実力は本物です。決勝進出をフロックと言う人がいるなら大間違い。マイアミの球場は<strong style="color:white;">事実上のベネズエラのホームグラウンド</strong>——スタンドはほぼ赤・黄・青で染まる。あの熱気の中でアクーニャがHRを打てば、アメリカ選手が浮き足立つシーンだって起こりえる。<strong style="color:white;">ベネズエラ初優勝の確率は35〜40%</strong>、決して低くない。</div>
+          </div>
+        </div>
+
+        <div class="chat-bubble">
+          <div class="bubble-icon">⚖️</div>
+          <div class="bubble-text" style="background:rgba(255,215,0,0.05);">
+            <div class="bubble-label" style="color:var(--gold);">⚖️ 中立アナリスト</div>
+            <div class="bubble-body">ベネズエラ優勝の「必要条件」を整理します。①<strong style="color:white;">ロドリゲスが最低でも3回を1点以内に抑える</strong>（試合の流れをリセットできる）②<strong style="color:white;">ガルシアが3打数2安打以上の活躍</strong>③<strong style="color:white;">5〜6回に勝ち越しかつリードを守りきる</strong>④<strong style="color:white;">マイアミの熱狂をアメリカ投手陣のプレッシャーに変換する</strong>。これが揃えば、オッズ+210は過小評価かもしれない。<strong style="color:white;">歴史は必ず誰かが初めて作るもの</strong>——今日がその日になる可能性はある。</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 議題4（決勝特別議題） -->
+      <div class="chat-section">
+        <div class="chat-topic">💬 議題4：決勝戦で「最も目が離せない選手」を一人挙げるとしたら？</div>
+
+        <div class="chat-bubble">
+          <div class="bubble-icon">🦅</div>
+          <div class="bubble-text" style="background:rgba(191,10,48,0.1);">
+            <div class="bubble-label" style="color:#ff8888;">🦅 アメリカ担当</div>
+            <div class="bubble-body">迷わず<strong style="color:white;">ロマン・アンソニー（21歳）</strong>です。準決勝で421フィートの勝ち越しソロ——それを21歳がやってのけた。しかもWBCで21歳以下として初の準決勝以降でのHRという歴史的記録まで作っている。今大会の顔になりつつある若武者が、<strong style="color:white;">「WBC最終章」でどんな打席を見せるか</strong>。相手が左腕ロドリゲスでも怯まない。ベネズエラにとって最大の脅威はジャッジよりもこの男かもしれない。</div>
+          </div>
+        </div>
+
+        <div class="chat-bubble right">
+          <div class="bubble-icon">🦁</div>
+          <div class="bubble-text" style="background:rgba(244,205,0,0.08);">
+            <div class="bubble-label" style="color:#ffcc44;">🦁 ベネズエラ担当</div>
+            <div class="bubble-body">言うまでもなく<strong style="color:white;">マイケル・ガルシア</strong>。打率.435、OPS 1.110——ただの数字じゃない。<strong style="color:white;">「どんな投手からでも打てる」という確信</strong>がプレーから伝わってくる。しかも彼はアクーニャの「従兄弟」で、いつもアクーニャの陰に隠れてきた選手。今大会は完全に自分のステージとして躍動している。決勝でもきっとやってくれる——<strong style="color:white;">世界が「マイケル・ガルシア」の名前を覚える夜になる</strong>と信じています。</div>
+          </div>
+        </div>
+
+        <div class="chat-bubble">
+          <div class="bubble-icon">⚖️</div>
+          <div class="bubble-text" style="background:rgba(255,215,0,0.05);">
+            <div class="bubble-label" style="color:var(--gold);">⚖️ 中立アナリスト</div>
+            <div class="bubble-body">私が注目するのは<strong style="color:white;">ジャクソン・チョーリオ（21歳）</strong>です。なぜ打順9番なのか誰もわからない……でも、それが逆に怖い。<strong style="color:white;">「一番警戒されていないスラッガー」</strong>がクリーンアップを打つ打線相手に終盤の攻撃でどう使われるか。アメリカの配球が甘くなった瞬間——チョーリオの一発が決勝戦をひっくり返す可能性がある。<strong style="color:white;">「知らなかった」では済まされない男</strong>、それが今夜の最大の注目ポイントです。</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3者最終予想 -->
+      <div class="debate-verdict">
+        <h3 style="text-align:center; color:var(--gold); font-size:17px; margin-bottom:20px;">🏆 コメンテーター3者 最終予想スコア</h3>
+        <div class="verdict-scores">
+          <div class="vscore-card" style="background:rgba(191,10,48,0.1);">
+            <div class="vscore-icon">🦅</div>
+            <div class="vscore-role" style="color:#ff8888;">アメリカ担当</div>
+            <div class="vscore-num">5 <span style="color:var(--gold);">-</span> 2</div>
+            <div class="vscore-winner">🇺🇸 USA 快勝</div>
+            <div class="vscore-pct">
+              <div class="vscore-pct-main" style="color:#ff8888;">USA 72%</div>
+              <div class="vscore-pct-sub">VEN 28%</div>
+            </div>
+          </div>
+          <div class="vscore-card" style="background:rgba(255,215,0,0.06);">
+            <div class="vscore-icon">⚖️</div>
+            <div class="vscore-role" style="color:var(--gold);">中立アナリスト</div>
+            <div class="vscore-num">4 <span style="color:var(--gold);">-</span> 3</div>
+            <div class="vscore-winner">🇺🇸 USA 僅差</div>
+            <div class="vscore-pct">
+              <div class="vscore-pct-main" style="color:#ff8888;">USA 60%</div>
+              <div class="vscore-pct-sub" style="color:#ffcc44;">VEN 40%</div>
+            </div>
+          </div>
+          <div class="vscore-card" style="background:rgba(244,205,0,0.08);">
+            <div class="vscore-icon">🦁</div>
+            <div class="vscore-role" style="color:#ffcc44;">ベネズエラ担当</div>
+            <div class="vscore-num">5 <span style="color:var(--gold);">-</span> 4</div>
+            <div class="vscore-winner">🇻🇪 VEN 逆転勝利！</div>
+            <div class="vscore-pct">
+              <div class="vscore-pct-main" style="color:#ffcc44;">VEN 55%</div>
+              <div class="vscore-pct-sub">USA 45%</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-top:1px solid rgba(255,255,255,0.08); padding-top:18px;">
+          <h4 style="color:var(--gold); margin-bottom:12px; font-size:14px;">📋 3者討論の結論</h4>
+          <p style="font-size:13px; color:#c0c0d8; line-height:1.9;">
+            <strong style="color:white;">アメリカ有利で一致しつつも、見解の割れ方が面白い</strong>——アメリカ担当は「ブルペンの壁を超えられない」と圧勝予想、中立は「1点差のロースコア」、ベネズエラ担当だけが「ベネズエラ逆転劇」を予想。<br><br>
+            最大の論点は<strong style="color:white;">「ベネズエラの"流れ"をどう評価するか」</strong>。数字で見ればアメリカ優勢だが、今大会3試合連続の逆転勝利という事実は単なる運ではない。「<strong style="color:white;">勝負の流れに乗ったチームは止まらない</strong>」——これをデータで否定できる者はいない。<br><br>
+            全員が一致したのは「<strong style="color:white;">7回以降まで目が離せない</strong>」という点。接戦になればなるほど面白い試合になる。どちらが勝っても、今夜は<strong style="color:white;">野球史に残る決勝戦</strong>になるだろう。
+          </p>
+        </div>
+      </div>
+
     </section>
 
   </div><!-- /container -->
