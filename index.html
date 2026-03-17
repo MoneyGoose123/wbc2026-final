@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WBC 2026 決勝 🏆 アメリカ vs ベネズエラ 完全観戦ガイド</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --usa-red: #BF0A30;
+      --usa-blue: #002868;
+      --ven-red: #CF142B;
+      --ven-gold: #F4CD00;
+      --ven-navy: #003893;
+      --gold: #FFD700;
+      --gold2: #FFA500;
+      --bg-dark: #040810;
+      --bg-card: rgba(255,255,255,0.05);
+      --border: rgba(255,255,255,0.1);
+      --text-primary: #F0F4FF;
+      --text-secondary: #A0B0D0;
+    }
+
+    body {
+      background: var(--bg-dark);
+      color: var(--text-primary);
+      font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #020510 0%, #08091f 25%, #0d0a28 50%, #0e0808 75%, #04060e 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* USA glow left */
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 800px; height: 800px;
+      background: radial-gradient(circle, rgba(0,40,104,0.4) 0%, transparent 65%);
+      top: -300px; left: -300px;
+    }
+    /* Venezuela glow right */
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 800px; height: 800px;
+      background: radial-gradient(circle, rgba(207,20,43,0.3) 0%, transparent 65%);
+      bottom: -300px; right: -300px;
+    }
+
+    /* Gold shimmer center */
+    .hero-gold-bg {
+      position: absolute;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(255,215,0,0.08) 0%, transparent 60%);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /* Stars */
+    .stars-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(1.5px 1.5px at 15% 25%, rgba(255,215,0,0.8) 0%, transparent 100%),
+        radial-gradient(1px 1px at 85% 15%, rgba(255,255,255,0.6) 0%, transparent 100%),
+        radial-gradient(1px 1px at 45% 75%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 8% 70%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 92% 55%, rgba(255,215,0,0.6) 0%, transparent 100%),
+        radial-gradient(1px 1px at 38% 8%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 72% 88%, rgba(255,215,0,0.7) 0%, transparent 100%),
+        radial-gradient(1px 1px at 60% 35%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 25% 55%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 55% 92%, rgba(255,215,0,0.5) 0%, transparent 100%);
+    }
+
+    .hero-content { position: relative; z-index: 2; max-width: 900px; }
+
+    .final-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold), var(--gold2), var(--gold));
+      color: #000;
+      font-weight: 900;
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      padding: 8px 24px;
+      border-radius: 30px;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+      box-shadow: 0 4px 20px rgba(255,215,0,0.5);
+      animation: pulse-gold 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-gold {
+      0%, 100% { box-shadow: 0 4px 20px rgba(255,215,0,0.5); }
+      50% { box-shadow: 0 4px 40px rgba(255,215,0,0.9); }
+    }
+
+    .hero-trophy {
+      font-size: clamp(48px, 12vw, 90px);
+      margin-bottom: 16px;
+      filter: drop-shadow(0 0 20px rgba(255,215,0,0.6));
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .hero h1 {
+      font-size: clamp(18px, 4.5vw, 38px);
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 30px rgba(0,0,0,0.8);
+    }
+
+    .hero h1 .gold-text {
+      background: linear-gradient(135deg, #FFD700, #FFA500, #FFD700);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-flags {
+      font-size: clamp(52px, 14vw, 100px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 28px;
+      margin: 24px 0;
+    }
+
+    .hero-flags .vs-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .hero-flags .vs {
+      font-size: clamp(18px, 4vw, 28px);
+      font-weight: 900;
+      background: linear-gradient(135deg, #FFD700, #FFA500);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-flags .championship {
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      color: rgba(255,215,0,0.7);
+      font-weight: 700;
+    }
+
+    .hero-meta {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      color: rgba(255,255,255,0.8);
+      margin-top: 20px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,215,0,0.2);
+      border-radius: 14px;
+      padding: 14px 24px;
+    }
+
+    .hero-meta span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .ai-badges {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .ai-badge {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.7);
+    }
+
+    /* ========== LAYOUT ========== */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 16px 80px;
+    }
+
+    /* ========== SECTION ========== */
+    .section {
+      margin-top: 56px;
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .section.visible { opacity: 1; transform: translateY(0); }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .section-title .icon {
+      font-size: 22px;
+    }
+
+    /* ========== OVERVIEW CARDS ========== */
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1fr 80px 1fr;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .team-overview {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .team-overview.usa {
+      border-color: rgba(191,10,48,0.4);
+      background: linear-gradient(135deg, rgba(0,40,104,0.2) 0%, rgba(191,10,48,0.1) 100%);
+    }
+
+    .team-overview.ven {
+      border-color: rgba(244,205,0,0.4);
+      background: linear-gradient(135deg, rgba(207,20,43,0.2) 0%, rgba(244,205,0,0.1) 100%);
+    }
+
+    .team-flag { font-size: 48px; margin-bottom: 8px; }
+    .team-name { font-size: 20px; font-weight: 800; margin-bottom: 4px; }
+    .team-record { font-size: 13px; color: var(--text-secondary); }
+
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 14px;
+      gap: 8px;
+    }
+
+    .stat-item {
+      flex: 1;
+      background: rgba(255,255,255,0.04);
+      border-radius: 8px;
+      padding: 8px 6px;
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--gold);
+    }
+
+    .stat-label {
+      font-size: 10px;
+      color: var(--text-secondary);
+      margin-top: 2px;
+    }
+
+    .vs-center {
+      text-align: center;
+    }
+
+    .vs-big {
+      font-size: 28px;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .vs-trophy { font-size: 32px; display: block; margin-bottom: 8px; }
+
+    /* ========== PITCHER MATCHUP ========== */
+    .pitcher-matchup {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .pitcher-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .pitcher-card.usa-p { border-color: rgba(191,10,48,0.3); }
+    .pitcher-card.ven-p { border-color: rgba(244,205,0,0.3); }
+
+    .pitcher-flag { font-size: 24px; margin-bottom: 4px; }
+    .pitcher-name { font-size: 18px; font-weight: 800; margin-bottom: 2px; }
+    .pitcher-team { font-size: 12px; color: var(--text-secondary); margin-bottom: 12px; }
+
+    .pitcher-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .p-stat {
+      background: rgba(255,255,255,0.04);
+      border-radius: 8px;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .p-stat-val { font-size: 16px; font-weight: 800; color: var(--gold); }
+    .p-stat-lbl { font-size: 10px; color: var(--text-secondary); }
+
+    .matchup-center {
+      text-align: center;
+      font-size: 24px;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .pitcher-note {
+      margin-top: 10px;
+      font-size: 12px;
+      color: var(--text-secondary);
+      background: rgba(255,255,255,0.03);
+      border-radius: 8px;
+      padding: 8px 10px;
+    }
+
+    /* ========== PLAYER CARDS ========== */
+    .players-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .player-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .player-card:hover { transform: translateY(-3px); }
+    .player-card.usa-card { border-color: rgba(191,10,48,0.3); }
+    .player-card.ven-card { border-color: rgba(244,205,0,0.3); }
+
+    .player-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .player-flag { font-size: 20px; }
+    .player-name { font-size: 15px; font-weight: 800; }
+    .player-pos { font-size: 11px; color: var(--text-secondary); }
+
+    .player-stats-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+
+    .ps {
+      background: rgba(255,255,255,0.05);
+      border-radius: 6px;
+      padding: 4px 8px;
+      font-size: 12px;
+    }
+
+    .ps span {
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .player-desc {
+      font-size: 12px;
+      color: var(--text-secondary);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 8px;
+    }
+
+    /* ========== WATCHPOINTS ========== */
+    .watchpoints-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .wp-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+    }
+
+    .wp-number {
+      font-size: 32px;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .wp-title {
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .wp-desc {
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    /* ========== WIN CONDITIONS ========== */
+    .win-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .win-team {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .win-team.usa-win { border-color: rgba(191,10,48,0.4); }
+    .win-team.ven-win { border-color: rgba(244,205,0,0.4); }
+
+    .win-team-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .win-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 10px;
+      padding: 10px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 8px;
+    }
+
+    .win-item-num {
+      width: 22px;
+      height: 22px;
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      color: #000;
+      font-size: 11px;
+      font-weight: 900;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .win-item-text {
+      font-size: 13px;
+    }
+
+    .win-item-text strong {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 2px;
+    }
+
+    .win-item-text span {
+      font-size: 11px;
+      color: var(--text-secondary);
+    }
+
+    /* ========== AI ANALYSIS ========== */
+    .ai-panel {
+      background: linear-gradient(135deg, rgba(255,215,0,0.05) 0%, rgba(255,165,0,0.03) 100%);
+      border: 1px solid rgba(255,215,0,0.2);
+      border-radius: 20px;
+      padding: 28px;
+    }
+
+    .ai-title {
+      text-align: center;
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 24px;
+    }
+
+    .ai-agents {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .ai-agent {
+      background: rgba(255,255,255,0.05);
+      border-radius: 14px;
+      padding: 16px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .ai-icon { font-size: 28px; margin-bottom: 8px; }
+    .ai-name { font-size: 13px; font-weight: 800; margin-bottom: 6px; }
+    .ai-pick { font-size: 13px; color: var(--text-secondary); margin-bottom: 10px; }
+
+    .win-pct {
+      display: flex;
+      gap: 6px;
+      justify-content: center;
+      font-size: 12px;
+    }
+
+    .pct-usa {
+      background: rgba(191,10,48,0.3);
+      border: 1px solid rgba(191,10,48,0.5);
+      border-radius: 8px;
+      padding: 4px 10px;
+      font-weight: 700;
+    }
+
+    .pct-ven {
+      background: rgba(244,205,0,0.2);
+      border: 1px solid rgba(244,205,0,0.4);
+      border-radius: 8px;
+      padding: 4px 10px;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .ai-comments {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .ai-comment {
+      background: rgba(255,255,255,0.03);
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      border-left: 3px solid rgba(255,215,0,0.3);
+    }
+
+    .ai-comment strong {
+      color: var(--gold);
+      font-size: 12px;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .consensus {
+      background: linear-gradient(135deg, rgba(255,215,0,0.1), rgba(255,165,0,0.08));
+      border: 1px solid rgba(255,215,0,0.3);
+      border-radius: 14px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .consensus-label {
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: rgba(255,215,0,0.7);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .consensus-pick {
+      font-size: 22px;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 6px;
+    }
+
+    .consensus-score {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .odds-row {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 14px;
+    }
+
+    .odds-chip {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    /* ========== TIMELINE ========== */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+      padding-left: 32px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 10px;
+      top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--gold), rgba(255,215,0,0.1));
+    }
+
+    .tl-item {
+      position: relative;
+      padding: 0 0 20px 16px;
+    }
+
+    .tl-dot {
+      position: absolute;
+      left: -26px;
+      top: 4px;
+      width: 14px;
+      height: 14px;
+      background: var(--gold);
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(255,215,0,0.6);
+    }
+
+    .tl-time {
+      font-size: 12px;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .tl-text {
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    /* ========== CHECKLIST ========== */
+    .checklist {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 10px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 13px;
+    }
+
+    .check-box {
+      width: 18px;
+      height: 18px;
+      border: 2px solid var(--gold);
+      border-radius: 4px;
+      flex-shrink: 0;
+      background: rgba(255,215,0,0.05);
+    }
+
+    /* ========== HISTORIC NOTE ========== */
+    .historic-note {
+      background: linear-gradient(135deg, rgba(255,215,0,0.08), rgba(255,100,0,0.05));
+      border: 1px solid rgba(255,215,0,0.25);
+      border-radius: 16px;
+      padding: 20px 24px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .historic-icon { font-size: 32px; flex-shrink: 0; }
+
+    .historic-text h3 {
+      font-size: 15px;
+      font-weight: 800;
+      margin-bottom: 6px;
+      color: var(--gold);
+    }
+
+    .historic-text p {
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.25);
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 600px) {
+      .overview-grid,
+      .pitcher-matchup,
+      .win-grid,
+      .ai-agents {
+        grid-template-columns: 1fr;
+      }
+
+      .vs-center, .matchup-center { display: none; }
+
+      .ai-agents {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .ai-agents { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="stars-bg"></div>
+    <div class="hero-gold-bg"></div>
+    <div class="hero-content">
+      <div class="final-badge">🏆 WBC 2026 CHAMPIONSHIP GAME</div>
+      <div class="hero-trophy">🏆</div>
+      <h1>
+        <span class="gold-text">決勝戦</span> — WBC 2026 グランドフィナーレ<br>
+        アメリカ 🇺🇸 vs 🇻🇪 ベネズエラ
+      </h1>
+      <div class="hero-flags">
+        <span>🇺🇸</span>
+        <div class="vs-wrap">
+          <span class="championship">CHAMPIONSHIP</span>
+          <span class="vs">VS</span>
+          <span class="championship">FINAL</span>
+        </div>
+        <span>🇻🇪</span>
+      </div>
+      <div class="hero-meta">
+        <span>📅 2026年3月18日(水) 日本時間 9:00〜</span>
+        <span>🏟️ loanDepot Park, Miami</span>
+        <span>📺 FOX (米)/TBS系(日)</span>
+        <span>🌎 現地時間 8:00 PM ET</span>
+      </div>
+      <div class="ai-badges">
+        <span class="ai-badge">🤖 Claude 分析</span>
+        <span class="ai-badge">💬 ChatGPT 分析</span>
+        <span class="ai-badge">✨ Gemini 分析</span>
+        <span class="ai-badge">📊 3AI協議レポート</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MAIN ========== -->
+  <div class="container">
+
+    <!-- ========== 歴史的背景 ========== -->
+    <section class="section">
+      <div class="historic-note">
+        <div class="historic-icon">📜</div>
+        <div class="historic-text">
+          <h3>史上初のベネズエラ決勝進出</h3>
+          <p>ベネズエラは今大会初のWBC決勝進出。準々決勝で前王者・日本を8-5で撃破し、準決勝でもイタリアを7回逆転で4-2。対するアメリカは3大会連続の決勝進出。前回2023年大会はサヨナラ負けで準優勝に終わっており、悲願の世界一奪還を狙う。現地マイアミはベネズエラ系移民が多く、球場は灼熱の超満員が予想される。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 戦力比較 ========== -->
+    <section class="section">
+      <div class="section-title">
+        <span class="icon">⚔️</span>戦力比較
+      </div>
+      <div class="overview-grid">
+        <div class="team-overview usa">
+          <div class="team-flag">🇺🇸</div>
+          <div class="team-name">アメリカ</div>
+          <div class="team-record">大会成績：4勝1敗</div>
+          <div class="stat-row">
+            <div class="stat-item"><div class="stat-value">9本</div><div class="stat-label">大会HR</div></div>
+            <div class="stat-item"><div class="stat-value">2-1</div><div class="stat-label">準決勝</div></div>
+            <div class="stat-item"><div class="stat-value">-320</div><div class="stat-label">オッズ(FD)</div></div>
+          </div>
+        </div>
+        <div class="vs-center">
+          <span class="vs-trophy">🏆</span>
+          <div class="vs-big">VS</div>
+        </div>
+        <div class="team-overview ven">
+          <div class="team-flag">🇻🇪</div>
+          <div class="team-name">ベネズエラ</div>
+          <div class="team-record">大会成績：5勝1敗</div>
+          <div class="stat-row">
+            <div class="stat-item"><div class="stat-value">.339</div><div class="stat-label">大会打率</div></div>
+            <div class="stat-item"><div class="stat-value">4-2</div><div class="stat-label">準決勝</div></div>
+            <div class="stat-item"><div class="stat-value">+210</div><div class="stat-label">オッズ(FD)</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 先発投手マッチアップ ========== -->
+    <section class="section">
+      <div class="section-title">
+        <span class="icon">⚾</span>先発投手マッチアップ
+      </div>
+      <div class="pitcher-matchup">
+        <div class="pitcher-card usa-p">
+          <div class="pitcher-flag">🇺🇸</div>
+          <div class="pitcher-name">ノーラン・マクリーン</div>
+          <div class="pitcher-team">RHP | New York Mets | 24歳</div>
+          <div class="pitcher-stats">
+            <div class="p-stat"><div class="p-stat-val">右</div><div class="p-stat-lbl">投球腕</div></div>
+            <div class="p-stat"><div class="p-stat-val">65-70</div><div class="p-stat-lbl">想定球数</div></div>
+            <div class="p-stat"><div class="p-stat-val">2.06</div><div class="p-stat-lbl">昨季終盤ERA</div></div>
+            <div class="p-stat"><div class="p-stat-val">8試</div><div class="p-stat-lbl">昨季MLB登板</div></div>
+          </div>
+          <div class="pitcher-note">🏈 元大学アメフトQB出身の異色の経歴。WBC初登板はイタリア戦で3回3失点も、準決勝はリリーフで貢献。今大会最大のダークホース先発。左腕のエドゥアルド・ロドリゲスに対し、ブレグマンが4番に入る打順変更あり。</div>
+        </div>
+        <div class="matchup-center">⚾<br>先発</div>
+        <div class="pitcher-card ven-p">
+          <div class="pitcher-flag">🇻🇪</div>
+          <div class="pitcher-name">エドゥアルド・ロドリゲス</div>
+          <div class="pitcher-team">LHP | Arizona Diamondbacks | 32歳</div>
+          <div class="pitcher-stats">
+            <div class="p-stat"><div class="p-stat-val">左</div><div class="p-stat-lbl">投球腕</div></div>
+            <div class="p-stat"><div class="p-stat-val">10年+</div><div class="p-stat-lbl">MLB経験</div></div>
+            <div class="p-stat"><div class="p-stat-val">5.02</div><div class="p-stat-lbl">2025年ERA</div></div>
+            <div class="p-stat"><div class="p-stat-val">~29</div><div class="p-stat-lbl">昨季先発数</div></div>
+          </div>
+          <div class="pitcher-note">🐍 10年以上のMLB経験を持つベテラン左腕。ただし昨季ERA 5.02と安定感に欠ける。対ドミニカ共和国戦では2⅔回3失点(被HR2本)とピリッとせず。ブルペンの充実でどこまで引っ張るかがカギ。</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== アメリカ注目選手 ========== -->
+    <section class="section">
+      <div class="section-title">
+        <span class="icon">🇺🇸</span>アメリカ 注目選手 6選
+      </div>
+      <div class="players-grid">
+
+        <div class="player-card usa-card">
+          <div class="player-header">
+            <div class="player-flag">🇺🇸</div>
+            <div>
+              <div class="player-name">アーロン・ジャッジ</div>
+              <div class="player-pos">RF | New York Yankees | 33歳</div>
+            </div>
+          </div>
+          <div class="player-stats-row">
+            <div class="ps">本塁打 <span>2</span></div>
+            <div class="ps">主将 <span>🅲</span></div>
+          </div>
+          <div class="player-desc">大会通算2本塁打。MLB最高峰の打者として威圧感は抜群。ベネズエラ左腕先発に対し1番か2番で起用。1打席でも気を抜けない存在。</div>
+        </div>
+
+        <div class="player-card usa-card">
+          <div class="player-header">
+            <div class="player-flag">🇺🇸</div>
+            <div>
+              <div class="player-name">ガナー・ヘンダーソン</div>
+              <div class="player-pos">2B | Baltimore Orioles | 24歳</div>
+            </div>
+          </div>
+          <div class="player-stats-row">
+            <div class="ps">本塁打 <span>2</span></div>
+            <div class="ps">準決勝 <span>同点HR</span></div>
+          </div>
+          <div class="player-desc">準決勝ドミニカ戦で同点ソロ。左打者のため今日はブレグマンと入れ替えの可能性あり。2024年MVP候補の怪物スラッガー。</div>
+        </div>
+
+        <div class="player-card usa-card">
+          <div class="player-header">
+            <div class="player-flag">🇺🇸</div>
+            <div>
+              <div class="player-name">ロマン・アンソニー</div>
+              <div class="player-pos">OF | Boston Red Sox | 21歳</div>
+            </div>
+          </div>
+          <div class="player-stats-row">
+            <div class="ps">本塁打 <span>2</span></div>
+            <div class="ps">準決勝 <span>勝ち越しHR</span></div>
+          </div>
+          <div class="player-desc">準決勝で421フィートの勝ち越しソロ！21歳の超新星がWBC最大の舞台で輝く。左打者ゆえ相手左腕との対決に注目。</div>
+        </div>
+
+        <div class="player-card usa-card">
+          <div class="player-header">
+            <div class="player-flag">🇺🇸</div>
+            <div>
+              <div class="player-name">ピート・クロウ＝アームストロング</div>
+              <div class="player-pos">CF | Chicago Cubs | 23歳</div>
+            </div>
+          </div>
+          <div class="player-stats-row">
+            <div class="ps">本塁打 <span>2</span></div>
+            <div class="ps">守備 <span>🏅</span></div>
+          </div>
+          <div class="player-desc">大会2本塁打に加え超人的な守備範囲でCFを支配。広いloanDepot Parkで外野の覇権を握る。</div>
+        </div>
+
+        <div class="player-card usa-card">
+          <div class="player-header">
+            <div class="player-flag">🇺🇸</div>
+            <div>
+              <div class="player-name">アレックス・ブレグマン</div>
+              <div class="player-pos">3B/DH | Boston Red Sox | 32歳</div>
+            </div>
+          </div>
+          <div class="player-stats-row">
+            <div class="ps">今日 <span>先発確定</span></div>
+            <div class="ps">右打 <span>対左有利</span></div>
+          </div>
+          <div class="player-desc">ロドリゲスが左腕のためヘンダーソンと入れ替えで先発。世界シリーズ経験豊富な勝負強い右打者。大舞台でこそ輝く。</div>
+        </div>
+
+        <div class="player-card usa-card">
+          <div class="player-header">
+            <div class="player-flag">🇺🇸</div>
+            <div>
+              <div class="player-name">ポール・スキーンズ</div>
+              <div class="player-pos">SP/RP | Pittsburgh Pirates | 23歳</div>
+            </div>
+          </div>
+          <div class="player-stats-row">
+            <div class="ps">球速 <span>100mph+</span></div>
+            <div class="ps">リリーフ <span>登板予定</span></div>
+          </div>
+          <div class="player-desc">準決勝でマクリーン後を受け好投。決勝もリリーフ起用が濃厚。100マイル超の剛球でベネズエラ打線を封じられるか。</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========== ベネズエラ注目選手 ========== -->
+    <section class="section">
+      <div class="section-title">
+        <span class="icon">🇻🇪</span>ベネズエラ 注目選手 6選
+      </div>
+      <div class="players-grid">
+
+        <div class="player-card ven-card">
+          <div class="player-header">
+            <div class="player-flag">🇻🇪</div>
+            <div>
+              <div class="player-name">マイケル・ガルシア</div>
+              <div class="player-pos">SS/3B | Kansas City Royals | 24歳</div>
+            </div>
+          </div>
+          <div class="player-stats-row">
+            <div class="ps">打率 <span>.435</span></div>
+            <div class="ps">安打 <span>10</span></div>
+            <div class="ps">打点 <span>6</span></div>
+            <div class="ps">OPS <span>1.110</span></div>
+          </div>
+          <div class="player-desc">🔥 今大会MVP候補筆頭！準決勝イタリア戦でも勝ち越し打。大会を通じてチーム最多安打。まるで別人のように輝いている。</div>
+        </div>
+
+        <div class="player-card ven-card">
+          <div class="player-header">
+            <div class="player-flag">🇻🇪</div>
+            <div>
+              <div class="player-name">ロナルド・アクーニャ Jr.</div>
+              <div class="player-pos">OF | Atlanta Braves | 27歳</div>
+            </div>
+          </div>
+          <div class="player-stats-row">
+            <div class="ps">大会 <span>チームの顔</span></div>
+            <div class="ps">準決勝 <span>同点打</span></div>
+          </div>
+          <div class="player-desc">準決勝で劇的同点打！昨年のACL手術から完全復活。この男がノッたとき止められる投手はいない。アメリカ投手陣との真剣勝負は必見。</div>
+        </div>
+
+        <div class="player-card ven-card">
+          <div class="player-header">
+            <div class="player-flag">🇻🇪</div>
+            <div>
+              <div class="player-name">ジャクソン・チョーリオ</div>
+              <div class="player-pos">OF | Milwaukee Brewers | 21歳</div>
+            </div>
+          </div>
+          <div class="player-stats-row">
+            <div class="ps">打順 <span>9番</span></div>
+            <div class="ps">実力 <span>大会屈指</span></div>
+          </div>
+          <div class="player-desc">なぜか9番起用の21歳。実力は大会屈指の若手スラッガーで、準決勝も好機に安打。隠れた最大の脅威。1点を追う終盤に要注意。</div>
+        </div>
+
+        <div class="player-card ven-card">
+          <div class="player-header">
+            <div class="player-flag">🇻🇪</div>
+            <div>
+              <div class="player-name">ルイス・アラエス</div>
+              <div class="player-pos">OF/1B | San Diego Padres | 28歳</div>
+            </div>
+          </div>
+          <div class="player-stats-row">
+            <div class="ps">打率 <span>歴代最高レベル</span></div>
+            <div class="ps">三振 <span>ほぼゼロ</span></div>
+          </div>
+          <div class="player-desc">予選では打率.545！三振をしないバットコントロールの達人。アメリカ投手がどう攻めてもファウルで粘り続ける。初球打ちの誘惑に要注意。</div>
+        </div>
+
+        <div class="player-card ven-card">
+          <div class="player-header">
+            <div class="player-flag">🇻🇪</div>
+            <div>
+              <div class="player-name">サルバドール・ペレス</div>
+              <div class="player-pos">C | Kansas City Royals | 35歳</div>
+            </div>
+          </div>
+          <div class="player-stats-row">
+            <div class="ps">経験 <span>14年</span></div>
+            <div class="ps">WS優勝 <span>2×</span></div>
+          </div>
+          <div class="player-desc">ウィリアム・コントレラスとともに「WBC最強捕手コンビ」を形成。打っても怖い35歳の大黒柱。田中将大のようなリーダーシップでチームを支える。</div>
+        </div>
+
+        <div class="player-card ven-card">
+          <div class="player-header">
+            <div class="player-flag">🇻🇪</div>
+            <div>
+              <div class="player-name">アンドレス・ヒメネス</div>
+              <div class="player-pos">2B | Cleveland Guardians | 26歳</div>
+            </div>
+          </div>
+          <div class="player-stats-row">
+            <div class="ps">守備 <span>GG賞</span></div>
+            <div class="ps">走塁 <span>足速い</span></div>
+          </div>
+          <div class="player-desc">準決勝でも好機に生還。ゴールドグラブ受賞の堅守と足で掻き回す。アメリカの内野手との守備対決も見もの。</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========== 観戦ポイント ========== -->
+    <section class="section">
+      <div class="section-title">
+        <span class="icon">👁️</span>決勝戦 観戦ポイント 6選
+      </div>
+      <div class="watchpoints-grid">
+        <div class="wp-card">
+          <div class="wp-number">01</div>
+          <div class="wp-title">🎯 新人先発マクリーン vs ベネズエラ超打線</div>
+          <div class="wp-desc">元QBの24歳右腕がMLB最強クラスの打線を相手に決勝戦先発。65〜70球の球数制限あり。1〜3回をどれだけ無失点で凌げるかが勝負の分岐点。</div>
+        </div>
+        <div class="wp-card">
+          <div class="wp-number">02</div>
+          <div class="wp-title">⚡ アクーニャJr.の完全復活宣言</div>
+          <div class="wp-desc">ACL手術から復帰し大会で輝きを取り戻したアクーニャ。アメリカの超剛速球リリーフ陣（スキーンズ、ミラー等）との対決で真価が問われる。</div>
+        </div>
+        <div class="wp-card">
+          <div class="wp-number">03</div>
+          <div class="wp-title">🏠 マイアミ・ホームアドバンテージ</div>
+          <div class="wp-desc">loanDepot Parkはベネズエラ系移民が多いマイアミが舞台。球場はベネズエラサポーターで埋まる可能性大。本拠地的雰囲気を活かせるか。</div>
+        </div>
+        <div class="wp-card">
+          <div class="wp-number">04</div>
+          <div class="wp-title">🔫 アメリカ最強ブルペンの投入順</div>
+          <div class="wp-desc">マクリーン降板後はポール・スキーンズ、メイソン・ミラー(TBD)等の100mph超ブルペン陣が控える。どのイニングで誰を投入するかの采配戦。</div>
+        </div>
+        <div class="wp-card">
+          <div class="wp-number">05</div>
+          <div class="wp-title">🌟 9番チョーリオの逆襲</div>
+          <div class="wp-desc">大会屈指の実力を持ちながら9番起用のチョーリオ。相手の警戒が薄い分、ビッグイニングの起点になりやすい。終盤の一発があれば一気に流れが変わる。</div>
+        </div>
+        <div class="wp-card">
+          <div class="wp-number">06</div>
+          <div class="wp-title">🏆 アメリカ「悲願の世界一」vs ベネズエラ「初戴冠」</div>
+          <div class="wp-desc">2023年大会でメキシコにサヨナラ負けしたアメリカの雪辱か、WBC初の決勝進出ベネズエラの初優勝か。どちらが勝っても歴史に残る名勝負になる。</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 勝利の条件 ========== -->
+    <section class="section">
+      <div class="section-title">
+        <span class="icon">🎖️</span>勝利の5条件
+      </div>
+      <div class="win-grid">
+        <div class="win-team usa-win">
+          <div class="win-team-header">🇺🇸 アメリカが勝つには</div>
+          <div class="win-item">
+            <div class="win-item-num">1</div>
+            <div class="win-item-text">
+              <strong>マクリーンが3〜4回を無失点</strong>
+              <span>序盤の援護射撃があれば後ろのブルペンが楽になる。先制されると攻守が崩れる。</span>
+            </div>
+          </div>
+          <div class="win-item">
+            <div class="win-item-num">2</div>
+            <div class="win-item-text">
+              <strong>アクーニャ・ガルシアを封じる</strong>
+              <span>ベネズエラ打線の核。この2人をどう料理するかが最大の焦点。</span>
+            </div>
+          </div>
+          <div class="win-item">
+            <div class="win-item-num">3</div>
+            <div class="win-item-text">
+              <strong>左腕ロドリゲスを早期KO</strong>
+              <span>5.02ERA。2〜3回に集中攻撃して早期降板に追い込み、ブルペン消耗作戦が有効。</span>
+            </div>
+          </div>
+          <div class="win-item">
+            <div class="win-item-num">4</div>
+            <div class="win-item-text">
+              <strong>スキーンズらリリーフを温存</strong>
+              <span>準決勝でも活躍。今日も中盤以降の継投が事実上の先発。疲労管理が重要。</span>
+            </div>
+          </div>
+          <div class="win-item">
+            <div class="win-item-num">5</div>
+            <div class="win-item-text">
+              <strong>アウェイムードに飲まれない</strong>
+              <span>マイアミはベネズエラ色が濃い。逆境を経験の多い選手たちが冷静に対応できるか。</span>
+            </div>
+          </div>
+        </div>
+        <div class="win-team ven-win">
+          <div class="win-team-header">🇻🇪 ベネズエラが勝つには</div>
+          <div class="win-item">
+            <div class="win-item-num">1</div>
+            <div class="win-item-text">
+              <strong>ロドリゲスが初回を切り抜ける</strong>
+              <span>USA打線は初回から全力攻撃が鉄則。1回を無失点で凌げれば流れがくる。</span>
+            </div>
+          </div>
+          <div class="win-item">
+            <div class="win-item-num">2</div>
+            <div class="win-item-text">
+              <strong>アクーニャが決勝でも魅せる</strong>
+              <span>「今大会最高の選手」の座はアクーニャで確定。決勝でも輝けば歴史に名を刻む。</span>
+            </div>
+          </div>
+          <div class="win-item">
+            <div class="win-item-num">3</div>
+            <div class="win-item-text">
+              <strong>マクリーンを攻略して序盤リード</strong>
+              <span>WBC決勝初登板の若手右腕。プレッシャーをかけて球数を消費させ、早期交代を誘う。</span>
+            </div>
+          </div>
+          <div class="win-item">
+            <div class="win-item-num">4</div>
+            <div class="win-item-text">
+              <strong>またも終盤逆転劇を演じる</strong>
+              <span>今大会は準々決勝(対日本8-5)も準決勝(対イタリア7回逆転)も後半の逆転勝ち。</span>
+            </div>
+          </div>
+          <div class="win-item">
+            <div class="win-item-num">5</div>
+            <div class="win-item-text">
+              <strong>マイアミの地鳴り熱狂を力に変える</strong>
+              <span>loanDepot Parkは実質「ベネズエラの聖地」。ファンの後押しを選手たちが存分に吸収する。</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== AI3者協議分析 ========== -->
+    <section class="section">
+      <div class="section-title">
+        <span class="icon">🤖</span>AI 3者協議分析レポート
+      </div>
+      <div class="ai-panel">
+        <div class="ai-title">🧠 Claude × ChatGPT × Gemini — 決勝大予測</div>
+
+        <div class="ai-agents">
+          <div class="ai-agent">
+            <div class="ai-icon">🔵</div>
+            <div class="ai-name">Claude (Anthropic)</div>
+            <div class="ai-pick">🇺🇸 USA 勝利予測</div>
+            <div class="win-pct">
+              <span class="pct-usa">USA 67%</span>
+              <span class="pct-ven">VEN 33%</span>
+            </div>
+          </div>
+          <div class="ai-agent">
+            <div class="ai-icon">🟢</div>
+            <div class="ai-name">ChatGPT (OpenAI)</div>
+            <div class="ai-pick">🇺🇸 USA 勝利予測</div>
+            <div class="win-pct">
+              <span class="pct-usa">USA 63%</span>
+              <span class="pct-ven">VEN 37%</span>
+            </div>
+          </div>
+          <div class="ai-agent">
+            <div class="ai-icon">🟡</div>
+            <div class="ai-name">Gemini (Google)</div>
+            <div class="ai-pick">🇺🇸 USA 勝利予測</div>
+            <div class="win-pct">
+              <span class="pct-usa">USA 65%</span>
+              <span class="pct-ven">VEN 35%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="ai-comments">
+          <div class="ai-comment">
+            <strong>🔵 Claude 分析</strong>
+            アメリカ最大の強みは中盤以降のブルペン。マクリーンが先発をこなした後、スキーンズ・ミラー級の剛速球継投が待ち受ける。ベネズエラはガルシアとアクーニャが本当に怖いが、今大会の逆転劇続きは「ツキが続かない法則」にも引っかかる。 USA側オッズ-320はやや過剰だが、フランチャイズ的なマイアミのアドバンテージがベネズエラを後押しする。予想スコアは <strong>USA 4-2 VEN</strong>。
+          </div>
+          <div class="ai-comment">
+            <strong>🟢 ChatGPT 分析</strong>
+            決勝の最大の見どころは「打線対決」。アメリカはジャッジ・アンソニー・PCA・ヘンダーソンの4クリーンアップ級打者が左腕ロドリゲスに挑む。ロドリゲスはWBCモードだとばらつきがあり、大量点の可能性もある。一方、ベネズエラの「逆転力」は本物で、終盤まで絶対に目が離せない。予想スコアは <strong>USA 5-3 VEN</strong>。
+          </div>
+          <div class="ai-comment">
+            <strong>🟡 Gemini 分析</strong>
+            注目すべきはベネズエラのチーム一体感。準々決勝で日本を8-5で破り、準決勝でも逆転優勝。「奇跡の流れ」が確実に来ている。大会を通じて最高打率を誇るガルシアが今日も活躍すれば番狂わせも十分ありえる。ただしアメリカブルペンの総合力は規格外。拮抗した試合になりそうで最終的にはアメリカが1点差を守りきる展開を予想。 予想スコアは <strong>USA 3-2 VEN</strong>。
+          </div>
+        </div>
+
+        <div class="consensus">
+          <div class="consensus-label">🏆 3AI コンセンサス予測</div>
+          <div class="consensus-pick">🇺🇸 アメリカ 優勝</div>
+          <div class="consensus-score">予想最多票スコア：USA 4-2 VEN（延長戦の可能性あり）</div>
+          <div class="odds-row">
+            <span class="odds-chip">🇺🇸 USA -320（65%相当）</span>
+            <span class="odds-chip" style="color:var(--gold)">🇻🇪 VEN +210（35%相当）</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== タイムライン ========== -->
+    <section class="section">
+      <div class="section-title">
+        <span class="icon">⏱️</span>観戦タイムライン（日本時間）
+      </div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-time">AM 8:30</div>
+          <div class="tl-text">試合前セレモニー・スターティングラインナップ発表</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-time">AM 9:00</div>
+          <div class="tl-text">⚾ 試合開始（現地 8:00 PM ET）— マクリーン vs ロドリゲス 初球</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-time">AM 9:00〜10:30</div>
+          <div class="tl-text">1〜3回：先発投手の見せ場。マクリーン65〜70球のプラン通りに行くか</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-time">AM 10:30〜11:30</div>
+          <div class="tl-text">4〜6回：継投開始。スキーンズ投入のタイミングが最大の見どころ</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-time">AM 11:30〜</div>
+          <div class="tl-text">7〜9回：クローザー対決。ベネズエラは今大会連続で7回逆転劇を起こしている</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-time">AM 12:30頃</div>
+          <div class="tl-text">🏆 表彰式・優勝セレモニー予定（延長の場合は〜13:30）</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 観戦チェックリスト ========== -->
+    <section class="section">
+      <div class="section-title">
+        <span class="icon">✅</span>決勝観戦チェックリスト
+      </div>
+      <div class="checklist">
+        <div class="check-item"><div class="check-box"></div>マクリーンの初球の入りを確認</div>
+        <div class="check-item"><div class="check-box"></div>ロドリゲスのストライク率をチェック</div>
+        <div class="check-item"><div class="check-box"></div>アクーニャの打席ごとの配球を見る</div>
+        <div class="check-item"><div class="check-box"></div>ガルシアが1番打者として出塁するか</div>
+        <div class="check-item"><div class="check-box"></div>スキーンズの登板イニングを予測</div>
+        <div class="check-item"><div class="check-box"></div>球場の雰囲気（VEN多数 or USA多数）</div>
+        <div class="check-item"><div class="check-box"></div>ベネズエラの7回の攻撃に注目</div>
+        <div class="check-item"><div class="check-box"></div>9番チョーリオが得点圏に絡むか</div>
+        <div class="check-item"><div class="check-box"></div>ジャッジのHRを見届ける</div>
+        <div class="check-item"><div class="check-box"></div>優勝セレモニーを最後まで鑑賞</div>
+      </div>
+    </section>
+
+  </div><!-- /container -->
+
+  <footer>
+    <p>🏆 WBC 2026 決勝 アメリカ 🇺🇸 vs 🇻🇪 ベネズエラ — 2026年3月18日（水）9:00 JST</p>
+    <p style="margin-top:8px">このガイドは Claude・ChatGPT・Gemini 3AI協議により作成されました。</p>
+    <p style="margin-top:8px">データ出典: MLB.com / ESPN / CBS Sports / FOX Sports / Yahoo Sports / FanDuel</p>
+  </footer>
+
+  <script>
+    // Scroll-in animations
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    sections.forEach(s => observer.observe(s));
+  </script>
+
+</body>
+</html>
